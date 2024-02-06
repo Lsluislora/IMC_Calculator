@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    //colors for IMC Calculator
+    <color name="beige">#9c8565</color>
+    <color name="black_brown">#333333</color>
+    <color name="tanned">#c77c57</color>
+    <color name="background_cardview">#6d6552</color>
+    <color name="selected_background_cardview">#a47642</color>
+    <color name="title_text">#FFFFFFFF</color>
+
+
+
+
 </resources>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:padding="12dp"
+    android:background="@color/black_brown"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -12,10 +13,36 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginRight="8dp"
-        android:background="@color/black"
+        android:backgroundTint="@color/background_cardview"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@+id/cardviewMale"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_female"
+                app:tint="@color/title_text"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:textAllCaps="true"
+                android:textColor="@color/title_text"
+                android:textSize="24sp"
+                android:layout_marginTop="8dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     </androidx.cardview.widget.CardView>
 
@@ -24,9 +51,36 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:background="@color/black"
+        android:backgroundTint="@color/background_cardview"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardviewFemale"
         app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_male"
+                android:layout_gravity="center"
+                app:tint="@color/title_text"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"
+                android:textAllCaps="true"
+                android:textColor="@color/title_text"
+                android:textSize="24sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     </androidx.cardview.widget.CardView>
 
@@ -36,6 +90,8 @@
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
         android:background="@color/black"
+        android:backgroundTint="@color/background_cardview"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardviewFemale">
@@ -50,6 +106,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="8dp"
         android:background="@color/black"
+        android:backgroundTint="@color/background_cardview"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@id/cardviewAge"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardviewHeight">
@@ -62,6 +120,8 @@
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
         android:background="@color/black"
+        android:backgroundTint="@color/background_cardview"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cardviewWeight"
         app:layout_constraintTop_toBottomOf="@id/cardviewHeight">
@@ -71,11 +131,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardviewAge"
         android:layout_marginTop="20dp"
-        android:text="CALCULAR">
+        android:backgroundTint="@color/beige"
+        android:text="CALCULAR"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardviewAge">
 
     </androidx.appcompat.widget.AppCompatButton>
 
