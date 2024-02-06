@@ -51,8 +51,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setGenderColor() {
 
-        cardviewMale.setCardBackgroundColor(getBackgroundColor(isMaleSelected));
-        cardviewFemale.setCardBackgroundColor(getBackgroundColor(isFemaleSelected));
+        cardviewMale.setCardBackgroundColor(getBackgroundColor(isMaleSelected))
+        cardviewFemale.setCardBackgroundColor(getBackgroundColor(isFemaleSelected))
 
     }
 
