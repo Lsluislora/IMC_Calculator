@@ -1,9 +1,19 @@
 package com.project.imccalculater
 
+import android.graphics.Color
+import android.health.connect.datatypes.HeightRecord
+import android.icu.text.DecimalFormat
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.widget.NumberPicker
+import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.view.size
+import com.google.android.material.slider.RangeSlider
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,13 +22,16 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var cardviewFemale: CardView
     private lateinit var cardviewMale: CardView
-
+    private lateinit var rsHeight: RangeSlider
+    private lateinit var tvHeight: TextView
+    private lateinit var weightNumberPicker: NumberPicker
+    private lateinit var ageNumberPicker: NumberPicker
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         initComponent()
         initListener()
+        configNumberPicker()
         initUI()
 
     }
@@ -31,23 +44,35 @@ class MainActivity : AppCompatActivity() {
     private fun initComponent() {
         cardviewFemale = findViewById(R.id.cardviewFemale)
         cardviewMale = findViewById(R.id.cardviewMale)
+        rsHeight = findViewById(R.id.rsSetHeight)
+        tvHeight = findViewById(R.id.tvSetHeight)
+        weightNumberPicker = findViewById(R.id.weightNumberPicker)
+        ageNumberPicker = findViewById(R.id.ageNumberPicker)
 
     }
 
     private fun initListener() {
 
         cardviewFemale.setOnClickListener {
-
-            changeGenderColor()
             setGenderColor()
+            changeGenderColor()
+
         }
 
         cardviewMale.setOnClickListener {
-            changeGenderColor()
             setGenderColor()
+            changeGenderColor()
+
+        }
+
+        rsHeight.addOnChangeListener { _, value, _ ->
+            val format = DecimalFormat("#.##")
+            val result = format.format(value)
+            tvHeight.text = "$result cm"
         }
 
     }
+
 
     private fun setGenderColor() {
 
@@ -72,5 +97,26 @@ class MainActivity : AppCompatActivity() {
         return ContextCompat.getColor(this, referenceColor)
 
     }
+
+    private fun configHeightNumberPicker(){
+        weightNumberPicker.minValue = 0
+        weightNumberPicker.maxValue = 300
+        weightNumberPicker.value = 50
+    }
+
+    private fun configNumberPicker(){
+        weightNumberPicker.minValue = 0
+        weightNumberPicker.maxValue = 300
+        weightNumberPicker.value = 50
+
+        ageNumberPicker.minValue = 0
+        ageNumberPicker.maxValue = 100
+        ageNumberPicker.value = 30
+
+
+
+    }
+
+
 
 }

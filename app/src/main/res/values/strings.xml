@@ -2,4 +2,9 @@
     <string name="app_name">IMC Calculator</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
+    <string name="height">Altura</string>
+    <string name="age">Edad</string>
+    <string name="weight">Peso</string>
+    <string name="calculate">CALCULAR</string>
+    <string name="kg">KG</string>
 </resources>
