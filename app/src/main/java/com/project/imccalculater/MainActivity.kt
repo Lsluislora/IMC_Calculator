@@ -1,18 +1,12 @@
 package com.project.imccalculater
 
-import android.graphics.Color
-import android.health.connect.datatypes.HeightRecord
 import android.icu.text.DecimalFormat
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.NumberPicker
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
-import androidx.core.view.size
 import com.google.android.material.slider.RangeSlider
 
 class MainActivity : AppCompatActivity() {
@@ -68,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         rsHeight.addOnChangeListener { _, value, _ ->
             val format = DecimalFormat("#.##")
             val result = format.format(value)
-            tvHeight.text = "$result cm"
+            tvHeight.text = result
         }
 
     }
@@ -96,12 +90,6 @@ class MainActivity : AppCompatActivity() {
 
         return ContextCompat.getColor(this, referenceColor)
 
-    }
-
-    private fun configHeightNumberPicker(){
-        weightNumberPicker.minValue = 0
-        weightNumberPicker.maxValue = 300
-        weightNumberPicker.value = 50
     }
 
     private fun configNumberPicker(){
